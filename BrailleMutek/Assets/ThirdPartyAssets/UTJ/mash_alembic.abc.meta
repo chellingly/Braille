@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 648862edf0881fe4e8369b09d2243f72
+timeCreated: 1516406280
+licenseType: Free
+ScriptedImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f53f5fc499d31e44b9deee84d28a9ee8, type: 3}
+  streamSettings:
+    normalsMode: 1
+    tangentsMode: 1
+    aspectRatioMode: 0
+    swapHandedness: 1
+    swapFaceWinding: 0
+    turnQuadEdges: 0
+    shareVertices: 1
+    treatVertexExtraDataAsStatics: 0
+    cacheSamples: 0
+    use32BitsIndexBuffer: 0
+  scaleFactor: 0.01
+  startFrame: 0
+  endFrame: 199
+  AbcStartTime: 0.041666668
+  AbcEndTime: 8.333333
+  AbcFrameCount: 200
+  importWarning: 
+  varyingTopologyMeshNames: []
+  splittingMeshNames: []

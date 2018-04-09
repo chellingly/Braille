@@ -1,0 +1,82 @@
+fileFormatVersion: 2
+guid: 682500e372bb1bc4da8cb6b621eb6be2
+timeCreated: 1523260249
+licenseType: Free
+SubstanceImporter:
+  externalObjects: {}
+  serializedVersion: 5
+  materialInstances:
+  - serializedVersion: 16
+    name: velvet_iridescent
+    prototypeName: velvet_iridescent
+    shaderName: 
+    shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: 
+    renderQueue: -1
+    lightmapFlags: 4
+    inputs: []
+    materialInformation:
+      serializedVersion: 5
+      offset: {x: 0, y: 0}
+      scale: {x: 1, y: 1}
+      generateMipmaps: 1
+      generateAllOutputs: 0
+      animationUpdateRate: 0
+    materialProperties:
+      serializedVersion: 3
+      texEnvs: []
+      floats: []
+      colors: []
+    textureParameters:
+    - name: velvet_iridescent_basecolor
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: velvet_iridescent_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: velvet_iridescent_metallic
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: velvet_iridescent_height
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: velvet_iridescent_ambientocclusion
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    textureAssignments:
+    - shaderProp: _MainTex
+      material: {instanceID: 0}
+      baseUID: 3177528275
+    - shaderProp: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 3177528273
+    - shaderProp: _MetallicGlossMap
+      material: {instanceID: 0}
+      baseUID: 3177528233
+    - shaderProp: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 3062261641
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 3177528229
+    buildTargetSettings:
+    - serializedVersion: 2
+      buildTarget: 
+      textureWidth: 512
+      textureHeight: 512
+      textureFormat: 0
+      loadingBehavior: 1
+  deletedPrototypes: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
