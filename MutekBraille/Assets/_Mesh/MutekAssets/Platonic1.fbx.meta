@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: f5ea0a354569db347a850a8fe5ede8ae
+timeCreated: 1516742945
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: group
+    100002: group1
+    100004: group2
+    100006: group3
+    100008: group4
+    100010: pasted__pPlatonic1
+    100012: pasted__pPlatonic1 1
+    100014: pasted__pPlatonic1 2
+    100016: pasted__pPlatonic1 3
+    100018: //RootNode
+    100020: pPlatonic1
+    100022: pPlatonic10
+    100024: pPlatonic11
+    100026: pPlatonic12
+    100028: pPlatonic13
+    100030: pPlatonic2_chunks_1
+    100032: pPlatonic3
+    100034: pPlatonic3 1
+    100036: pPlatonic4
+    100038: pPlatonic4 1
+    100040: pPlatonic5
+    100042: pPlatonic5 1
+    100044: pPlatonic6
+    100046: pPlatonic6 1
+    100048: pPlatonic7
+    100050: pPlatonic7 1
+    100052: pPlatonic8
+    100054: pPlatonic9
+    100056: transform15
+    100058: transform16
+    100060: transform17
+    100062: transform18
+    100064: transform19
+    100066: transform20
+    100068: transform21
+    100070: transform22
+    100072: transform23
+    100074: transform24
+    100076: transform25
+    100078: transform26
+    100080: transform27
+    100082: transform28
+    100084: transform29
+    100086: transform30
+    100088: transform31
+    100090: transform32
+    100092: transform33
+    100094: transform34
+    400000: group
+    400002: group1
+    400004: group2
+    400006: group3
+    400008: group4
+    400010: pasted__pPlatonic1
+    400012: pasted__pPlatonic1 1
+    400014: pasted__pPlatonic1 2
+    400016: pasted__pPlatonic1 3
+    400018: //RootNode
+    400020: pPlatonic1
+    400022: pPlatonic10
+    400024: pPlatonic11
+    400026: pPlatonic12
+    400028: pPlatonic13
+    400030: pPlatonic2_chunks_1
+    400032: pPlatonic3
+    400034: pPlatonic3 1
+    400036: pPlatonic4
+    400038: pPlatonic4 1
+    400040: pPlatonic5
+    400042: pPlatonic5 1
+    400044: pPlatonic6
+    400046: pPlatonic6 1
+    400048: pPlatonic7
+    400050: pPlatonic7 1
+    400052: pPlatonic8
+    400054: pPlatonic9
+    400056: transform15
+    400058: transform16
+    400060: transform17
+    400062: transform18
+    400064: transform19
+    400066: transform20
+    400068: transform21
+    400070: transform22
+    400072: transform23
+    400074: transform24
+    400076: transform25
+    400078: transform26
+    400080: transform27
+    400082: transform28
+    400084: transform29
+    400086: transform30
+    400088: transform31
+    400090: transform32
+    400092: transform33
+    400094: transform34
+    4300000: pPlatonic13
+    9500000: //RootNode
+    13700000: pPlatonic13
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 811aceb0e4d2b2540b50e3055505e32d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pPlatonic2_shardMaterial
+    second: {fileID: 2100000, guid: 7b71b9fc608345341babbab44b1052ce, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
