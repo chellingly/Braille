@@ -63,13 +63,13 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Du: 0.827
-    - _Dv: 0.462
-    - _Feed: 0.0166
+    - _Du: 0.71
+    - _Dv: 0.35
+    - _Feed: 0.0148
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Kill: 0.0538
+    - _Kill: 0.0438
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -77,7 +77,7 @@ Material:
     - _Seed: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.916
+    - _Speed: 0.424
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

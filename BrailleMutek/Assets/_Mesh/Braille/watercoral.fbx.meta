@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 794a86310e8d37441a0271e442610264
+timeCreated: 1523315084
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CINEMA_4D_Editor
+    100002: CORAL
+    100004: coral
+    100006: CORAL_2
+    100008: Curls
+    100010: curls
+    100012: Curls_2
+    100014: Dual_Graph
+    100016: Dual_Graph_2
+    100018: Dual_Graph_3
+    100020: Dual_Graph_4
+    100022: Dual_Graph_5
+    100024: Dual_Graph_6
+    100026: Dual_Graph_7
+    100028: Metaball_1
+    100030: oRIGIN
+    100032: Polygon
+    100034: Polygon_2
+    100036: Shader
+    100038: strands
+    100040: Subdivision_Surface
+    100042: Subdivision_Surface_2
+    100044: Subdivision_Surface_3
+    100046: Subdivision_Surface_4
+    100048: Subdivision_Surface_5
+    100050: tEMP
+    100052: WaterCoral
+    100054: //RootNode
+    100056: watercoral
+    400000: CINEMA_4D_Editor
+    400002: CORAL
+    400004: coral
+    400006: CORAL_2
+    400008: Curls
+    400010: curls
+    400012: Curls_2
+    400014: Dual_Graph
+    400016: Dual_Graph_2
+    400018: Dual_Graph_3
+    400020: Dual_Graph_4
+    400022: Dual_Graph_5
+    400024: Dual_Graph_6
+    400026: Dual_Graph_7
+    400028: Metaball_1
+    400030: oRIGIN
+    400032: Polygon
+    400034: Polygon_2
+    400036: Shader
+    400038: strands
+    400040: Subdivision_Surface
+    400042: Subdivision_Surface_2
+    400044: Subdivision_Surface_3
+    400046: Subdivision_Surface_4
+    400048: Subdivision_Surface_5
+    400050: tEMP
+    400052: WaterCoral
+    400054: //RootNode
+    400056: watercoral
+    2000000: CINEMA_4D_Editor
+    2100000: No Name
+    2300000: CORAL
+    2300002: coral
+    2300004: Curls_2
+    2300006: Dual_Graph_3
+    2300008: Dual_Graph_6
+    2300010: Dual_Graph_7
+    2300012: Metaball_1
+    2300014: oRIGIN
+    2300016: Polygon
+    2300018: Polygon_2
+    2300020: Subdivision_Surface_2
+    2300022: watercoral
+    3300000: CORAL
+    3300002: coral
+    3300004: Curls_2
+    3300006: Dual_Graph_3
+    3300008: Dual_Graph_6
+    3300010: Dual_Graph_7
+    3300012: Metaball_1
+    3300014: oRIGIN
+    3300016: Polygon
+    3300018: Polygon_2
+    3300020: Subdivision_Surface_2
+    3300022: watercoral
+    4300000: watercoral
+    4300002: Metaball_1
+    4300004: Subdivision_Surface_2
+    4300006: Polygon
+    4300008: Dual_Graph_3
+    4300010: Curls_2
+    4300012: Polygon_2
+    4300014: Dual_Graph_6
+    4300016: CORAL
+    4300018: coral
+    4300020: oRIGIN
+    4300022: Dual_Graph_7
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

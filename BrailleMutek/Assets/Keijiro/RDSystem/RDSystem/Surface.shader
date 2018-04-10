@@ -83,7 +83,7 @@
             half p = smoothstep(_Threshold, _Threshold + _Fading, v0);
 
 			o.Albedo = tex2D(_Detail, IN.uv_Detail).rgb;
-			//o.Albedo *= lerp(_Color0.rgb, _Color1.rgb, p);
+			o.Albedo *= lerp(_Color0.rgb, _Color1.rgb, p);
 			//o.Albedo *= tex2D(_Detail, IN.uv_Detail).rgb * 2;
 			o.Alpha = v0;
             o.Smoothness = lerp(_Smoothness0, _Smoothness1, p);

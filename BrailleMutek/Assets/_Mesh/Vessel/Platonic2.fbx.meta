@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 98155c7c2c1da3c45990d0c0b4f2eddf
+timeCreated: 1516743818
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: group
+    100002: group1
+    100004: group2
+    100006: group3
+    100008: group4
+    100010: group5
+    100012: pasted__pPlatonic1
+    100014: pasted__pPlatonic1_2
+    100016: pasted__pPlatonic1_3
+    100018: pasted__pPlatonic1_4
+    100020: //RootNode
+    100022: Poses__pPlatonic13
+    100024: pPlatonic1
+    100026: pPlatonic10
+    100028: pPlatonic11
+    100030: pPlatonic12
+    100032: pPlatonic13
+    100034: pPlatonic2_chunks_1
+    100036: pPlatonic3
+    100038: pPlatonic3_2
+    100040: pPlatonic4
+    100042: pPlatonic4_2
+    100044: pPlatonic5
+    100046: pPlatonic5_2
+    100048: pPlatonic6
+    100050: pPlatonic6_2
+    100052: pPlatonic7
+    100054: pPlatonic7_2
+    100056: pPlatonic8
+    100058: pPlatonic9
+    100060: Subdivision_Surface
+    100062: transform15
+    100064: transform16
+    100066: transform17
+    100068: transform18
+    100070: transform19
+    100072: transform20
+    100074: transform21
+    100076: transform22
+    100078: transform23
+    100080: transform24
+    100082: transform25
+    100084: transform26
+    100086: transform27
+    100088: transform28
+    100090: transform29
+    100092: transform30
+    100094: transform31
+    100096: transform32
+    100098: transform33
+    100100: transform34
+    400000: group
+    400002: group1
+    400004: group2
+    400006: group3
+    400008: group4
+    400010: group5
+    400012: pasted__pPlatonic1
+    400014: pasted__pPlatonic1_2
+    400016: pasted__pPlatonic1_3
+    400018: pasted__pPlatonic1_4
+    400020: //RootNode
+    400022: Poses__pPlatonic13
+    400024: pPlatonic1
+    400026: pPlatonic10
+    400028: pPlatonic11
+    400030: pPlatonic12
+    400032: pPlatonic13
+    400034: pPlatonic2_chunks_1
+    400036: pPlatonic3
+    400038: pPlatonic3_2
+    400040: pPlatonic4
+    400042: pPlatonic4_2
+    400044: pPlatonic5
+    400046: pPlatonic5_2
+    400048: pPlatonic6
+    400050: pPlatonic6_2
+    400052: pPlatonic7
+    400054: pPlatonic7_2
+    400056: pPlatonic8
+    400058: pPlatonic9
+    400060: Subdivision_Surface
+    400062: transform15
+    400064: transform16
+    400066: transform17
+    400068: transform18
+    400070: transform19
+    400072: transform20
+    400074: transform21
+    400076: transform22
+    400078: transform23
+    400080: transform24
+    400082: transform25
+    400084: transform26
+    400086: transform27
+    400088: transform28
+    400090: transform29
+    400092: transform30
+    400094: transform31
+    400096: transform32
+    400098: transform33
+    400100: transform34
+    2300000: group5
+    3300000: group5
+    4300000: pPlatonic13
+    4300002: group5
+    9500000: //RootNode
+    13700000: pPlatonic13
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 6f7573c9a0e42aa4f9fac2ee5b1055b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 811aceb0e4d2b2540b50e3055505e32d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pPlatonic2_shardMaterial
+    second: {fileID: 2100000, guid: 7b71b9fc608345341babbab44b1052ce, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
