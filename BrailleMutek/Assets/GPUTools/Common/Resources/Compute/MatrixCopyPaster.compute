@@ -1,0 +1,17 @@
+﻿#include "Platforms.cginc"
+
+#pragma kernel CSMatrixCopyPaster
+
+RWStructuredBuffer<float4x4> matricesFrom;
+RWStructuredBuffer<float4x4> matricesTo;
+
+uint matricesFromLength;
+
+[numthreads(THREADS,1,1)]
+void CSMatrixCopyPaster (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= matricesFromLength)
+        return;
+    
+    matricesTo[id.x] = matricesFrom[id.x];
+}

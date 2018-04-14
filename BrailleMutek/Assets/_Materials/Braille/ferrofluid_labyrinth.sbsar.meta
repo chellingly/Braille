@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b6f2ed58780bf884d96ed6e5472a461c
-timeCreated: 1523296135
+timeCreated: 1523567271
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -227,7 +227,7 @@ SubstanceImporter:
       texEnvs:
       - _BumpMap:
           texture: {instanceID: 0}
-          scale: {x: 4, y: 1}
+          scale: {x: 4, y: 4}
           offset: {x: 0, y: 0}
       - _DetailAlbedoMap:
           texture: {instanceID: 0}
@@ -251,7 +251,7 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _MetallicGlossMap:
           texture: {instanceID: 0}
-          scale: {x: 4, y: 1}
+          scale: {x: 4, y: 4}
           offset: {x: 0, y: 0}
       - _OcclusionMap:
           texture: {instanceID: 0}
@@ -259,7 +259,7 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _ParallaxMap:
           texture: {instanceID: 0}
-          scale: {x: 4, y: 1}
+          scale: {x: 4, y: 4}
           offset: {x: 0, y: 0}
       floats:
       - _BumpScale: 1

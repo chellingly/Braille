@@ -1,0 +1,11 @@
+
+V1.3 Document Revision and Update
+
+This Version introduces two new parameters to better control Micro Shimmers and increase stability when the motion in the scene decreases  i.e. the camera is almost stationary or not moving at all.
+
+
+- Micro Shimmer Reduction, eliminates or reduces shimmer caused by polygons smaller then a pixel in screenspace. Due to the nature of Temporal Anti-Aliasing (not specific to CTAA) Micro shimmers can sometimes become more evident when the geometric polygons become smaller then a pixel in the distance or when there is a clear horizontal or vertical line.  Reducing this value (Default value is 3.0) will enable CTAA to do a more aggressive check for these conditions and sample accordingly to reduce shimmering. The Default value is a good general purpose value, reducing this too much may cause darkening artifacts when in motion. 
+
+PLEASE NOTE: You will easily see the effect of this value while tweaking if you pay attention to AA quality on edges where there is a large difference in Dynamic range between the edge and it's surrounding pixels, such as a bright car headlight against the sky or in totall darkness.
+
+- Static Stability Power, Dynamically adjusts Temporal Blending and other values depending on relative Velocity. Helps increase stability (reducing overall shimmering ) on static or approaching near static camera or object motion. value ranges from 0-1, default is 0.5 which is a 50% mix 

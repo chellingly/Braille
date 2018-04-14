@@ -1,0 +1,18 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#include "Types.cginc"
+
+#pragma kernel CSReset
+
+RWStructuredBuffer<Particle> particles;
+uint particlesLength;
+
+[numthreads(THREADS,1,1)]
+void CSReset (uint3 id : SV_DispatchThreadID)
+{
+	if(id.x >= particlesLength)
+		return;
+
+	Particle particle = particles[id.x];
+	particle.lastPosition = particle.position;
+	particles[id.x] = particle;
+}

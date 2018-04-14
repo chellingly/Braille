@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 91c0a50ee5e692a4cbfa89ea86152f0e
-timeCreated: 1523323526
+timeCreated: 1523565810
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -113,9 +113,9 @@ SubstanceImporter:
         stringvalue: 
     - name: color
       value:
-        scalar[0]: 0
-        scalar[1]: 0.42068958
-        scalar[2]: 1
+        scalar[0]: 0.6764706
+        scalar[1]: 1
+        scalar[2]: 0.6787019
         scalar[3]: 0
         texture: {instanceID: 0}
         stringvalue: 

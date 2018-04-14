@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4cf1e7ecd735ba24b839fa48e3c90871
-timeCreated: 1523296818
+timeCreated: 1523575177
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -11,7 +11,7 @@ SubstanceImporter:
     prototypeName: 3d_printed_mesh_lattice
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 4
     inputs:
@@ -275,7 +275,7 @@ SubstanceImporter:
       texEnvs:
       - _BumpMap:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 10, y: 10}
           offset: {x: 0, y: 0}
       - _DetailAlbedoMap:
           texture: {instanceID: 0}
@@ -295,19 +295,19 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _MainTex:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 10, y: 10}
           offset: {x: 0, y: 0}
       - _MetallicGlossMap:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 10, y: 10}
           offset: {x: 0, y: 0}
       - _OcclusionMap:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 10, y: 10}
           offset: {x: 0, y: 0}
       - _ParallaxMap:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 10, y: 10}
           offset: {x: 0, y: 0}
       floats:
       - _BumpScale: 1

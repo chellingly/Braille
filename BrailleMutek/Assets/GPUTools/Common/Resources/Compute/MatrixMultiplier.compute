@@ -1,0 +1,19 @@
+﻿#include "Platforms.cginc"
+
+#pragma kernel CSMatrixMultiplier
+
+RWStructuredBuffer<float4x4> matrices1;
+RWStructuredBuffer<float4x4> matrices2;
+
+RWStructuredBuffer<float4x4> resultMatrices;
+
+uint resultMatricesLength;
+
+[numthreads(THREADS,1,1)]
+void CSMatrixMultiplier (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= resultMatricesLength)
+        return;
+
+    resultMatrices[id.x] = mul(matrices1[id.x], matrices2[id.x]);
+}

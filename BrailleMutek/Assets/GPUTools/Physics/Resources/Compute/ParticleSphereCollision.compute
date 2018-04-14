@@ -1,0 +1,54 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#include "Types.cginc"
+
+#pragma kernel CSParticleSphereCollision
+
+RWStructuredBuffer<Particle> particles;
+RWStructuredBuffer<Sphere> staticSpheres;
+RWStructuredBuffer<Sphere> oldStaticSpheres;
+
+uint particlesLength;
+uint staticSpheresLength;
+
+float step;
+float t;
+
+float3 SphereSphereColisionSolveImpl(float3 position1, float3 position2, float radius1, float radius2)
+{
+	float3 relPosition = position1 - position2;
+	float sumRadius = radius1 + radius2;
+	float sgrDistance = dot(relPosition, relPosition);
+
+	if (sgrDistance > sumRadius*sumRadius)
+		return float3(0, 0, 0);
+
+	float penetration = sumRadius - length(relPosition);
+	float3 normal = normalize(relPosition);
+
+	return normal*penetration;
+}
+
+[numthreads(THREADS,1,1)]
+void CSParticleSphereCollision (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= particlesLength)
+        return;
+
+	Particle particle = particles[id.x];
+	
+	for (uint i = 0; i < staticSpheresLength; i++)
+	{
+		Sphere newSphere = staticSpheres[i];
+		Sphere oldSphere = oldStaticSpheres[i];
+
+		Sphere sphere;
+		sphere.position = lerp(oldSphere.position, newSphere.position, t);
+		sphere.radius = newSphere.radius;
+
+		float3 correction = SphereSphereColisionSolveImpl(particle.position, sphere.position, particle.radius, sphere.radius);
+		particle.position += correction;
+	}
+
+	particles[id.x] = particle;
+}
+

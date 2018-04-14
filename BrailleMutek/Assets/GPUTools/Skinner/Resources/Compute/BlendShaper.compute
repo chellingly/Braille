@@ -1,0 +1,36 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#pragma kernel CSBlendShaper
+
+uint vertexCount;
+uint shapesCount;
+
+float4x4 localToWorld;
+
+RWStructuredBuffer<float> weights;
+RWStructuredBuffer<float3> shapes;
+RWStructuredBuffer<float4x4> transforms;
+
+uint transformsLength;
+
+[numthreads(THREADS,1,1)]
+void CSBlendShaper (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= transformsLength)
+        return;
+
+    float3 d = float3(0,0,0);
+
+    for(uint i = 0; i < shapesCount; i++)
+    {
+        d += shapes[id.x + vertexCount*i]*weights[i];
+    }
+    
+    d = mul(localToWorld, float4(d, 0));
+    
+    float4x4 transform = { 1, 0, 0, d.x,
+                         0, 1, 0, d.y,
+                         0, 0, 1, d.z,
+                         0, 0, 0, 1 };
+                         
+    transforms[id.x] = transform;
+}

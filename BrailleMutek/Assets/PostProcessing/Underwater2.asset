@@ -29,9 +29,9 @@ MonoBehaviour:
     m_Settings:
       excludeSkybox: 1
   antialiasing:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
-      method: 1
+      method: 0
       fxaaSettings:
         preset: 4
       taaSettings:
@@ -122,9 +122,9 @@ MonoBehaviour:
       basic:
         postExposure: 1.45
         temperature: 4
-        tint: 17.6
+        tint: 2.7
         hueShift: 0
-        saturation: 0.206
+        saturation: 0.555
         contrast: 0.982
       channelMixer:
         red: {x: 1, y: 0, z: 0}

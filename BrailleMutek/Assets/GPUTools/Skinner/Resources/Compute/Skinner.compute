@@ -1,0 +1,51 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#pragma kernel CSComputeMatrices
+
+struct Weight
+{
+	int bi0;
+	int bi1;
+	int bi2;
+	int bi3;
+
+	float w0;
+	float w1;
+	float w2;
+	float w3;
+};
+
+RWStructuredBuffer<Weight> weights;
+RWStructuredBuffer<float4x4> bones;
+RWStructuredBuffer<float4x4> transforms;
+
+uint transformsLength;
+
+[numthreads(THREADS,1,1)]
+void CSComputeMatrices (uint3 id : SV_DispatchThreadID)
+{   
+    if(id.x >= transformsLength)
+        return;
+        
+	Weight weight = weights[id.x];
+
+	float4x4 bm0 = bones[weight.bi0];
+	float4x4 bm1 = bones[weight.bi1];
+	float4x4 bm2 = bones[weight.bi2];
+	float4x4 bm3 = bones[weight.bi3];
+
+	float4x4 transform;
+                
+    for (int n = 0; n < 4; n++)
+    {
+	    for (int m = 0; m < 4; m++)
+		{
+			transform[n][m] =
+				bm0[n][m]*weight.w0 +
+				bm1[n][m]*weight.w1 +
+				bm2[n][m]*weight.w2 +
+				bm3[n][m]*weight.w3;
+		}
+    }
+
+	transforms[id.x] = transform;
+}

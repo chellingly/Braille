@@ -1,0 +1,20 @@
+﻿#include "Types.cginc"
+#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+
+#pragma kernel CSCopySpecificParticles
+
+RWStructuredBuffer<Particle> particles;
+RWStructuredBuffer<Particle> outParticles;
+RWStructuredBuffer<float> outParticlesMap;
+
+uint outParticlesMapLength;
+
+[numthreads(THREADS,1,1)]
+void CSCopySpecificParticles (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= outParticlesMapLength)
+        return;
+
+	float mapId = outParticlesMap[id.x];
+	outParticles[id.x] = particles[mapId];
+}

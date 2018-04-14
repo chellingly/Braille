@@ -1,0 +1,63 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#include "Types.cginc"
+
+#pragma kernel CSParticleLineSphereCollision
+
+RWStructuredBuffer<Particle> particles;
+RWStructuredBuffer<LineSphere> staticLineSpheres;
+RWStructuredBuffer<LineSphere> oldStaticLineSpheres;
+
+uint particlesLength;
+uint staticLineSpheresLength;
+
+float step;
+float t;
+
+float3 SphereLineSphereColisionSolveImpl(Particle particle, LineSphere lineSphere)
+{
+	float3 v = lineSphere.positionA - lineSphere.positionB;
+	float3 w = lineSphere.positionA - particle.position;
+	float projWv = saturate(dot(v, w) / dot(v, v));
+
+	float3 p = lerp(lineSphere.positionA, lineSphere.positionB, projWv);
+	float rP = lerp(lineSphere.radiusA, lineSphere.radiusB, projWv);
+
+	float3 relPosition = particle.position - p;
+	float sumRadius = particle.radius + rP;
+
+	if (dot(relPosition, relPosition) > sumRadius*sumRadius)
+		return float3(0, 0, 0);
+
+	float penetration = sumRadius - length(relPosition);
+	float3 normal = normalize(relPosition);
+
+	return normal*penetration;
+}
+
+[numthreads(THREADS,1,1)]
+void CSParticleLineSphereCollision (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= particlesLength)
+        return;
+        
+	Particle particle = particles[id.x];
+
+	for (uint i = 0; i < staticLineSpheresLength; i++)
+	{
+		LineSphere newLineSphere = staticLineSpheres[i];
+		LineSphere oldLineSphere = oldStaticLineSpheres[i];
+
+		LineSphere lineSphere;
+		lineSphere.positionA = lerp(oldLineSphere.positionA, newLineSphere.positionA, t);
+		lineSphere.positionB = lerp(oldLineSphere.positionB, newLineSphere.positionB, t);
+		lineSphere.radiusA = newLineSphere.radiusA;
+		lineSphere.radiusB = newLineSphere.radiusB;
+
+		float3 correction = SphereLineSphereColisionSolveImpl(particle, lineSphere);
+		particle.position += correction;
+	}
+
+	particles[id.x] = particle;
+}
+
+

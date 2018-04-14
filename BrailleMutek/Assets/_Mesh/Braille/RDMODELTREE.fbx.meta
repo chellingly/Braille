@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: acc436f88f9fa194f9b9003a7f4cb678
+timeCreated: 1523566810
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: RDbraincoral
+    100002: RDbraincoral_2
+    100004: RDcrabsquah
+    100006: RDcrabthing
+    100008: RDcrumple
+    100010: RDmelt
+    100012: RDmelty
+    100014: //RootNode
+    100016: RDrose
+    100018: RDsmoothground
+    100020: RDSphere_2
+    100022: RDSpherebrain
+    100024: RDSpherebrainless
+    100026: RDSphereflatter
+    100028: RDSpheremelt
+    100030: RDwaterpond
+    400000: RDbraincoral
+    400002: RDbraincoral_2
+    400004: RDcrabsquah
+    400006: RDcrabthing
+    400008: RDcrumple
+    400010: RDmelt
+    400012: RDmelty
+    400014: //RootNode
+    400016: RDrose
+    400018: RDsmoothground
+    400020: RDSphere_2
+    400022: RDSpherebrain
+    400024: RDSpherebrainless
+    400026: RDSphereflatter
+    400028: RDSpheremelt
+    400030: RDwaterpond
+    2100000: No Name
+    2300000: RDbraincoral
+    2300002: RDbraincoral_2
+    2300004: RDcrabsquah
+    2300006: RDcrabthing
+    2300008: RDcrumple
+    2300010: RDmelt
+    2300012: RDmelty
+    2300014: RDrose
+    2300016: RDsmoothground
+    2300018: RDSphere_2
+    2300020: RDSpherebrain
+    2300022: RDSpherebrainless
+    2300024: RDSphereflatter
+    2300026: RDSpheremelt
+    2300028: RDwaterpond
+    3300000: RDbraincoral
+    3300002: RDbraincoral_2
+    3300004: RDcrabsquah
+    3300006: RDcrabthing
+    3300008: RDcrumple
+    3300010: RDmelt
+    3300012: RDmelty
+    3300014: RDrose
+    3300016: RDsmoothground
+    3300018: RDSphere_2
+    3300020: RDSpherebrain
+    3300022: RDSpherebrainless
+    3300024: RDSphereflatter
+    3300026: RDSpheremelt
+    3300028: RDwaterpond
+    4300000: RDSphereflatter
+    4300002: RDSpherebrainless
+    4300004: RDSphere_2
+    4300006: RDSpherebrain
+    4300008: RDcrabsquah
+    4300010: RDSpheremelt
+    4300012: RDrose
+    4300014: RDbraincoral
+    4300016: RDbraincoral_2
+    4300018: RDmelty
+    4300020: RDmelt
+    4300022: RDcrabthing
+    4300024: RDcrumple
+    4300026: RDsmoothground
+    4300028: RDwaterpond
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

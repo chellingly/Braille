@@ -1,0 +1,24 @@
+CTAA V1.3 UPDATE CHANGES and FIXES
+
+ALL versions
+
+- Overall performance and Quality enhancement for PC and VR
+
+PC VERSION
+
+- Updated PC Prefab to reflect changes
+- HRD Response Value now ranges between 0.001 to 1.0 (Please adjust previous settings in your projects)
+- Added two new parameters to better control Micro Shimmers and increase stability when not in motion
+- Micro Shimmer Reduction, eliminates or reduces shimmer caused by polygons smaller then a pixel in screenspace (Please Read Documentation Update)
+- Static Stability Power, Dynamically adjusts Temporal Blending depending on relative Velocity. Helps increase stability on static or near static scenes. value ranges from 0-1, default is 0.5 which is a 50% mix (Please Read Documentation Update)
+
+
+CTAA V1.2 UPDATE CHANGES and FIXES
+
+ALL versions
+
+- Initial Unity 2018 compatibility confirmed
+- WebGL 2.0 compatibility ( Works with the latest Firefox and Google Chrome )
+- Tool for VR integration (Please read Documentation update)
+- Beta Unity Post Effect 2.0 integration help (WIP, Please read Documentation update)
+- Overall performance enhancement

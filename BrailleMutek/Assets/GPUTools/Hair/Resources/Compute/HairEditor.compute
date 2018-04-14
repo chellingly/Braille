@@ -1,0 +1,200 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+
+#pragma kernel CSMoveBrush
+#pragma kernel CSColorBrush
+#pragma kernel CSShrinkBrush
+#pragma kernel CSRemoveBrush
+
+struct Sphere
+{
+	float3 position;
+	float radius;
+};
+
+struct LineSphere
+{
+	float3 positionA;
+	float3 positionB;
+	float radiusA;
+	float radiusB;
+};
+
+RWStructuredBuffer<float3> vertices;
+RWStructuredBuffer<float> distances;
+RWStructuredBuffer<float4> colors;
+RWStructuredBuffer<float4x4> matrices;
+RWStructuredBuffer<Sphere> staticSpheres;
+RWStructuredBuffer<LineSphere> staticLineSpheres;
+
+int segments;
+
+float3 brushPosition;
+float brushRadius;
+float brushLenght1;
+float brushLenght2;
+float brushStrength;
+float brushCollisionDistance;
+float3 brushSpeed;
+float brushLengthSpeed;
+float3 brushColor;
+
+bool BrushContainsPoint(float3 vertex)
+{
+	float4x4 worldToView = matrices[0];
+	float3 localVertex = mul(worldToView, float4(vertex, 1.0f)).xyz;
+    float3 localBrushPosition = mul(worldToView, float4(brushPosition, 1.0f)).xyz;
+
+	float2 xyDiff = localVertex.xy - localBrushPosition.xy;
+
+    bool radiusCondition = dot(xyDiff, xyDiff) < brushRadius*brushRadius;
+
+	float zDiff = localBrushPosition.z - localVertex.z;
+
+    bool depthCondition1 = zDiff > -brushLenght1;
+    bool depthCondition2 = zDiff < brushLenght2;
+
+    return radiusCondition && depthCondition1 && depthCondition2;
+}
+
+float3 FixDistance(float3 upperVertex, float3 newVertex, float guideDistance)
+{
+    float3 relPosition = upperVertex - newVertex;
+    float3 actualDistance = length(relPosition);
+
+    float3 penetration = (guideDistance - actualDistance) / actualDistance;
+    float3 correction = relPosition * penetration;
+            
+    return newVertex - correction;
+}
+
+float3 SphereColisionSolve(float3 position1, float3 position2, float radius1, float radius2)
+{
+	float3 relPosition = position1 - position2;
+	float sumRadius = radius1 + radius2;
+	float sgrDistance = dot(relPosition, relPosition);
+
+	if (sgrDistance > sumRadius*sumRadius)
+		return float3(0, 0, 0);
+
+	float penetration = sumRadius - length(relPosition);
+	float3 normal = normalize(relPosition);
+
+	return normal*penetration*0.5f;
+}
+
+float3 LineSphereColisionSolve(float3 vertex, LineSphere lineSphere)
+{
+	float3 v = lineSphere.positionA - lineSphere.positionB;
+	float3 w = lineSphere.positionA - vertex;
+	float projWv = saturate(dot(v, w) / dot(v, v));
+
+	float3 p = lerp(lineSphere.positionA, lineSphere.positionB, projWv);
+	float rP = lerp(lineSphere.radiusA, lineSphere.radiusB, projWv);
+
+	float3 relPosition = vertex - p;
+	float sumRadius = brushCollisionDistance + rP;
+
+	if (dot(relPosition, relPosition) > sumRadius*sumRadius)
+		return float3(0, 0, 0);
+
+	float penetration = sumRadius - length(relPosition);
+	float3 normal = normalize(relPosition);
+
+	return normal*penetration*0.5;
+}
+
+float3 SolveCollisions(float3 vertex)
+{
+	for (uint i = 0; i < staticSpheres.Length; i++)
+	{
+		Sphere sphere = staticSpheres[i];
+		vertex += SphereColisionSolve(vertex, sphere.position, brushCollisionDistance, sphere.radius);
+	}
+	
+	for (uint i = 0; i < staticLineSpheres.Length; i++)
+	{
+		LineSphere lineSphere = staticLineSpheres[i];
+		vertex += LineSphereColisionSolve(vertex, lineSphere);
+	}
+
+	return vertex;
+}
+
+[numthreads(THREADS,1,1)]
+void CSRemoveBrush (uint3 id : SV_DispatchThreadID)
+{
+	uint root = id.x - id.x % segments; 
+	float3 vertex = vertices[id.x];
+	float3 worldVertex = mul(matrices[1], float4(vertex, 1.0f)).xyz;
+	
+	if(BrushContainsPoint(worldVertex))
+	{
+		distances[id.x/segments] = 0;
+	}
+
+}
+
+[numthreads(THREADS,1,1)]
+void CSMoveBrush (uint3 id : SV_DispatchThreadID)
+{
+	float3 vertex = vertices[id.x];
+	float3 worldVertex = mul(matrices[1], float4(vertex, 1.0f)).xyz;
+	
+	if(BrushContainsPoint(worldVertex))
+	{
+		worldVertex += brushSpeed*brushStrength;
+	}
+
+	AllMemoryBarrierWithGroupSync();
+
+	worldVertex = SolveCollisions(worldVertex);
+
+	AllMemoryBarrierWithGroupSync();
+
+	if(id.x % segments != 0)
+	{
+		float distance = distances[id.x/segments];
+		vertex = mul(matrices[2], float4(worldVertex, 1.0f)).xyz;
+		vertices[id.x] = FixDistance(vertices[id.x - 1], vertex, distance);
+	}
+}
+
+[numthreads(THREADS,1,1)]
+void CSColorBrush (uint3 id : SV_DispatchThreadID)
+{
+	float3 vertex = vertices[id.x];
+	float3 worldVertex = mul(matrices[1], float4(vertex, 1.0f)).xyz;
+	
+	if(BrushContainsPoint(worldVertex))
+	{
+		colors[id.x].rgb = lerp(colors[id.x].rgb, brushColor, brushStrength*0.1f);
+	}
+}
+
+[numthreads(THREADS,1,1)]
+void CSShrinkBrush (uint3 id : SV_DispatchThreadID)
+{
+	uint root = id.x - id.x % segments; 
+	float3 vertex = vertices[id.x];
+	float3 worldVertex = mul(matrices[1], float4(vertex, 1.0f)).xyz;
+	
+	if(BrushContainsPoint(worldVertex))
+	{
+		distances[id.x/segments] = distances[id.x/segments] + brushLengthSpeed*brushStrength;
+	}
+
+	AllMemoryBarrierWithGroupSync();
+
+	worldVertex = SolveCollisions(worldVertex);
+
+	AllMemoryBarrierWithGroupSync();
+
+	if(id.x % segments != 0)
+	{
+		float distance = distances[id.x/segments];
+		vertex = mul(matrices[2], float4(worldVertex, 1.0f)).xyz;
+		vertices[id.x] = FixDistance(vertices[id.x - 1], vertex, distance);
+	}
+}
+
+

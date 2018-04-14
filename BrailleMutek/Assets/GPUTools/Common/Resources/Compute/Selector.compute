@@ -1,0 +1,33 @@
+﻿#include "Platforms.cginc"
+
+#pragma kernel CSMatrixSelector
+#pragma kernel CSPointsSelector
+
+RWStructuredBuffer<uint> indices;
+
+RWStructuredBuffer<float4x4> matrices;
+RWStructuredBuffer<float4x4> selectedMatrices;
+
+uint indicesLength;
+
+[numthreads(THREADS,1,1)]
+void CSMatrixSelector (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= indicesLength)
+        return;
+
+    selectedMatrices[id.x] = matrices[indices[id.x]];
+}
+
+RWStructuredBuffer<float3> points;
+RWStructuredBuffer<float3> selectedPoints;
+
+
+[numthreads(THREADS,1,1)]
+void CSPointsSelector (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= indicesLength)
+        return;
+
+    selectedPoints[id.x] = points[indices[id.x]];
+}

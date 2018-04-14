@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b8377039bdf17c34d913c378bc089321
-timeCreated: 1523315868
+timeCreated: 1523566938
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -11,7 +11,7 @@ SubstanceImporter:
     prototypeName: slate_rockery
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 4
     inputs:

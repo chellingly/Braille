@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3d244215566834f4a9b134a414f51cf5
-timeCreated: 1523296710
+timeCreated: 1523566883
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -11,7 +11,7 @@ SubstanceImporter:
     prototypeName: acetate_artistic_mixed
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 4
     inputs:
@@ -259,7 +259,7 @@ SubstanceImporter:
       texEnvs:
       - _BumpMap:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 5, y: 5}
           offset: {x: 0, y: 0}
       - _DetailAlbedoMap:
           texture: {instanceID: 0}
@@ -279,11 +279,11 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _MainTex:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 5, y: 5}
           offset: {x: 0, y: 0}
       - _MetallicGlossMap:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 5, y: 5}
           offset: {x: 0, y: 0}
       - _OcclusionMap:
           texture: {instanceID: 0}
@@ -291,7 +291,7 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _ParallaxMap:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 5, y: 5}
           offset: {x: 0, y: 0}
       floats:
       - _BumpScale: 1

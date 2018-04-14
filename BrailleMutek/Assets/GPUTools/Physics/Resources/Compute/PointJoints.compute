@@ -1,0 +1,45 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#include "Types.cginc"
+
+#pragma kernel CSPointJoints
+
+RWStructuredBuffer<Particle> particles;
+RWStructuredBuffer<PointJoint> pointJoints;
+RWStructuredBuffer<float4x4> transforms;
+RWStructuredBuffer<float4x4> oldTransforms;
+
+uint pointJointsLength;
+
+float step;
+float t;
+uint isFixed;
+
+[numthreads(THREADS,1,1)]
+void CSPointJoints(uint3 id : SV_DispatchThreadID)
+{
+	if(id.x >= pointJointsLength)
+		return;
+
+	PointJoint joint = pointJoints[id.x];
+	Particle particle = particles[joint.bodyId];
+
+	float4x4 m4 = transforms[joint.matrixId];
+	float3 newGuidePosition = mul(m4, float4(joint.position, 1.0)).xyz;
+
+    if(joint.elasticity >= 1.0 || isFixed == 1)
+    {
+        particle.position = newGuidePosition;
+    }
+    else
+    {
+    	float4x4 oldM4 = oldTransforms[joint.matrixId];
+    	
+    	float3 oldGuidePosition = mul(oldM4, float4(joint.position, 1.0)).xyz;	
+    	float3 guidePosition = lerp(oldGuidePosition, newGuidePosition, t);
+    	
+	    float3 correction = (particle.position - guidePosition)*joint.elasticity;
+	    particle.position -= correction;
+    }
+	particles[joint.bodyId] = particle;
+}
+

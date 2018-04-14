@@ -1,0 +1,16 @@
+We have included an example VRTK Bezier Teleport prefab and an example scene in the VRTK folder. This is a zip file, so please unzip to your assets folder to use. The latest version of VRTK must be installed together with the latest Oculus Integration from the Unity Asset store. To use VRTK for HTC VIVE /OpenVR the latest SteamVR must be installed. 
+
+When using the Oculus SDK, VRTK requires a single camera and we cannot use ' Use Per Eye Camera ' , as CTAA requires two seperate cameras. This prefab shows a working method. We made a copy of the CentreEyeAnchor and set it's target eye to the ' Right ' eye, together with the CTAA scripts attached. The OVR Camera Rig script sets the CentreEyeAnchor to ' Both ' , so we override this with the ' LeftEyeFix ' script, which essentialy sets the CenterEyeAnchor cam to the 'Left ' Eye target.
+
+USE the Oculus Touch and VIVE controllers to Teleport
+
+P.S.  After running the VRTK demo, be aware that VRTK adds 'none' to Virtual Reality SDK's section in PlayerSettings. Please Remove This by selecting it and click '-' tab. This will allow you to run the non-vrtk demos.
+
+HOW TO USE?
+
+1) Make sure you already installed ALL the other relevant requirements for VRTK as mentioned above, BEFORE unzipping this file. Unzip to this ' VRTK_Teleport ' folder
+
+2) Just Drag the [VRTK_SDKManager].prefab to your scene (To test this, you can just drag this in to anyone of the CTAA demo scenes, make sure to disable or delete the current cameras). This is the standard Bezier Teleport which comes with VRTK however it is now setup ready to go with CTAA. Last but not least, depending which VR platform you like to support just move the Camera setups to the location you like to start from.
+
+3) Press Play! VRTK will start with the first VR device found on your system with CTAA enabled.
+

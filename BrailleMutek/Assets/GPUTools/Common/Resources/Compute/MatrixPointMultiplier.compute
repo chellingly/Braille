@@ -1,0 +1,19 @@
+﻿#include "Platforms.cginc"
+
+#pragma kernel CSMatrixPointMultiplier
+
+RWStructuredBuffer<float4x4> matrices;
+
+RWStructuredBuffer<float3> inPoints;
+RWStructuredBuffer<float3> outPoints;
+
+uint matricesLength;
+
+[numthreads(THREADS,1,1)]
+void CSMatrixPointMultiplier (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= matricesLength)
+        return;
+
+    outPoints[id.x] = mul(matrices[id.x], float4(inPoints[id.x], 1));
+}

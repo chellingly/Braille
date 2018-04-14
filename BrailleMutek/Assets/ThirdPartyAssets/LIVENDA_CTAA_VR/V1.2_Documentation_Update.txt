@@ -1,0 +1,18 @@
+
+### UNITY POST PROCESSING STACK V2 BETA INITIAL INTEGRATION 
+
+Below is the instructions to get CTAA working with the upcoming Unity Post Processing Stack V2, Please note this is not a complete or correct integration method at the moment and is not final. In the upcoming updates CTAA will be integrated correctly as a ' Custom Effect ' which can be pluged-in to the PPS V2 at the correct location.
+
+1 :: Setup the PPS V2, create a empty game object and apply the Post Process Volume script and apply a post process Profile, then choose/create a custom layer such as 'postfx' on this gameobject. You can just choose ' Is Global ' and this will apply FX to the entire scene 
+
+2 :: Select the Main Camera and apply the Post Process Layer Script. Select ' No Anti - aliasing ' from the dropdown menu and choose the corresponding layer you have created on the above step such as 'postfx'
+
+3 :: PPS V2 will now be active
+
+4 :: Place the CTAA Script on the Main Camera ' AFTER ' the Post Process Layer Script and CTAA will work as normal.
+
+Please note, as mentioned above, this is an initial integration method and is not final as CTAA will need to be placed on the correct location via a custom plugin method which will be available in the next coming updates.
+
+
+###  VR CAMERA HELPER
+

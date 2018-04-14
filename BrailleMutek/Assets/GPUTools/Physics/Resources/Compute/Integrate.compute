@@ -1,0 +1,35 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#include "Types.cginc"
+
+#pragma kernel CSIntegrate
+
+RWStructuredBuffer<Particle> particles;
+uint particlesLength;
+
+float dt;
+
+float3 gravity;
+float3 wind;
+
+float invDrag;
+
+[numthreads(THREADS,1,1)]
+void CSIntegrate (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x >= particlesLength)
+        return;
+
+	Particle particle = particles[id.x];
+
+	float3 acceleration = (gravity + wind)*dt*dt;
+
+	float3 difference = particle.position - particle.lastPosition;
+	float3 velocity = difference*invDrag + acceleration;
+	float3 nextPosition = particle.position + velocity;
+
+	particle.lastPosition = particle.position;
+	particle.position = nextPosition;
+	
+	particles[id.x] = particle;
+}
+

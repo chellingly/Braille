@@ -1,0 +1,46 @@
+﻿#include "Types.cginc"
+#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+
+#pragma kernel CSDistanceJoints
+
+RWStructuredBuffer<Particle> particles;
+RWStructuredBuffer<DistanceJoint> distanceJoints;
+
+float step;
+
+int startGroup;
+int sizeGroup;
+
+float3 DistanceJointSolveImpl(float3 position1, float3 position2, float distance)
+{
+	float3 relPosition = position1 - position2;
+	float actualDistance = length(relPosition);
+
+	float penetration = (distance - actualDistance) / actualDistance;
+	return relPosition*penetration;
+}
+
+void DistanceJointsSolve(DistanceJoint joint)
+{
+	Particle particle1 = particles[joint.body1Id];
+	Particle particle2 = particles[joint.body2Id];
+
+	float3 correction = DistanceJointSolveImpl(particle1.position, particle2.position, joint.distance)*joint.elasticity*step*0.5f;
+
+	particle1.position += correction;
+	particle2.position -= correction;
+
+	particles[joint.body1Id] = particle1;
+	particles[joint.body2Id] = particle2;
+}
+
+[numthreads(THREADS,1,1)]
+void CSDistanceJoints (uint3 id : SV_DispatchThreadID)
+{
+	int i = startGroup + id.x;
+	if(i < startGroup + sizeGroup)
+	{
+		DistanceJointsSolve(distanceJoints[i]);
+	}
+}
+

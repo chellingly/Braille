@@ -1,0 +1,58 @@
+﻿#include "..//..//..//Common/Resources/Compute/Platforms.cginc"
+#include "Types.cginc"
+
+#pragma kernel CSSplineJoints
+
+RWStructuredBuffer<Particle> particles;
+RWStructuredBuffer<PointJoint> pointJoints;
+RWStructuredBuffer<float4x4> transforms;
+
+uint pointJointsLength;
+float step;
+uint segments;
+
+float3 DistanceJointSolveImpl(float3 position1, float3 position2, float distance)
+{
+	float3 relPosition = position1 - position2;
+	float actualDistance = length(relPosition);
+
+	float penetration = (distance - actualDistance) / actualDistance;
+	return relPosition*penetration;
+}
+
+void DistanceJointsSolve(uint i1, uint i2, float distance)
+{
+	Particle particle1 = particles[i1];
+	Particle particle2 = particles[i2];
+
+	float3 correction = DistanceJointSolveImpl(particle1.position, particle2.position, distance)*step;
+
+	particle2.position -= correction;
+	particle2.lastPosition -= correction*0.9;
+
+	particles[i2] = particle2;
+}
+
+[numthreads(THREADS,1,1)]
+void CSSplineJoints (uint3 id : SV_DispatchThreadID)
+{
+    if(id.x*segments >= pointJointsLength)
+        return;
+	
+	for(uint i = 1; i < segments; i++)
+	{
+		uint index = id.x*segments + i;
+
+		PointJoint joint1 = pointJoints[index - 1];
+		float4x4 m1 = transforms[joint1.matrixId];
+		float3 guidePosition1 = mul(m1, float4(joint1.position, 1.0)).xyz;
+	
+		PointJoint joint2 = pointJoints[index];
+		float4x4 m2 = transforms[joint2.matrixId];
+		float3 guidePosition2 = mul(m2, float4(joint2.position, 1.0)).xyz;
+
+		float distance = length(guidePosition2 - guidePosition1);
+		DistanceJointsSolve(joint1.bodyId, joint2.bodyId, distance);
+	}
+}
+
