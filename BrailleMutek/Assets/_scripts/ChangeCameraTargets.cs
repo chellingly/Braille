@@ -12,9 +12,11 @@ public class ChangeCameraTargets : MonoBehaviour {
     }
 
 
-    public Transform target;
+    Transform target;
     public float speed = 1f;
     public GameObject[] possibleTargets;
+    public Vector3 distance = new Vector3(0,0,5);
+    
 
     public string keyChange;
 
@@ -24,6 +26,7 @@ public class ChangeCameraTargets : MonoBehaviour {
     Quaternion newRot;
     Vector3 relPos;
 
+    DTweenVector3 _position = new DTweenVector3(Vector3.zero, 1);
 
     #region Private Properties And Functions
 
@@ -74,18 +77,21 @@ public class ChangeCameraTargets : MonoBehaviour {
              targetIndex++; 
         }
 
-        if(targetIndex == possibleTargets.Length)
+        if(targetIndex== possibleTargets.Length)
         {
             targetIndex = 0;
         }
         else
         {
-          
+            transform.position = _position + distance;
             relPos = target.position - transform.position;
             newRot = Quaternion.LookRotation(relPos);
             transform.rotation = DTween.Step(transform.rotation, newRot, ref _vrotation, speed);
-          
+           // _position.omega = distance;
+            _position.Step(target.position);
             
+
+
         }
     }
  
